@@ -9,7 +9,13 @@
 <script setup>
 import BaseLayout from "@/layout/BaseLayout.vue";
 import { useRoute } from "vue-router";
+import { useStore } from "vuex";
+
 const route = useRoute();
+
+const store = useStore();
+const loginUser = store.state.user.LoginUser;
+console.log(loginUser);
 const debounce = (fn, delay) => {
   let timer;
   return (...args) => {

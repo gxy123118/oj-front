@@ -64,6 +64,7 @@ import {
 import { withDefaults, defineProps, ref, onMounted } from "vue";
 import message from "@arco-design/web-vue/es/message";
 import MdView from "@/components/MdView.vue";
+import router from "@/router";
 
 const form = ref<QuestionSubmitAddRequest>({
   code: "",
@@ -102,8 +103,9 @@ const submitCode = async () => {
   // console.log("后端返回的res", res);
   if (res.code === 0) {
     message.success("提交成功");
+    router.push("/questions");
   } else {
-    message.error("提交失败");
+    message.error(res.message);
   }
 };
 onMounted(() => {

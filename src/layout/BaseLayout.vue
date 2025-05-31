@@ -4,7 +4,13 @@
       <GlobalHeader />
     </a-layout-header>
     <a-layout-content class="content">
-      <router-view />
+      <a-layout style="background: #f1c191">
+        <a-layout-content style="padding: 16px; min-height: 280px">
+          <router-view />
+        </a-layout-content>
+      </a-layout>
+      <!-- 添加AI对话组件 -->
+      <AIChat />
     </a-layout-content>
     <a-layout-footer class="footer">
       <a href="https://arco.design/vue/component/layout" target="_blank"
@@ -14,8 +20,8 @@
   </a-layout>
 </template>
 <script setup lang="ts">
-//setup语法糖不需要显式export default导出组件
 import GlobalHeader from "../components/GlobalHeader.vue";
+import AIChat from "../components/AIChat.vue";
 </script>
 
 <style scoped>
